@@ -1,5 +1,5 @@
 {
-    "name": "uran1980/php-electrum-api",
+    "name": "boomuo/php-electrum-api",
     "description": "PHP wrapper for Electrum JSONRPC-API",
     "type": "library",
 	"keywords": ["electrum", "bitcoin", "payment", "jsonrpc", "api"],
