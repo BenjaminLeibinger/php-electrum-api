@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^8.0.2",
-        "laminas/laminas-hydrator": "~4.1.0"
+        "laminas/laminas-hydrator": "^4.13.0"
     },
 	"autoload": {
 		"psr-4": {
