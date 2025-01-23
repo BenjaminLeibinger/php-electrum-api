@@ -35,7 +35,7 @@ On the PHP side there are not much requirements, you only need at least PHP 5.6 
 # Install
 First you need to install [Composer](https://getcomposer.org/doc/00-intro.md), after you accomplished this you can go ahead:
 ```
-composer require padrio/php-electrum-api
+composer require boomuo/php-electrum-api
 ```
 Then you can simply include the autoloader and begin using the library:
 ```php

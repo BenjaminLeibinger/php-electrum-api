@@ -1,6 +1,6 @@
 <?php
 
-namespace Electrum\Request\Method;
+namespace Electrum\Request\Method\Address;
 
 use Electrum\Request\AbstractMethod;
 use Electrum\Request\MethodInterface;

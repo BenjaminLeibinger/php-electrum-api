@@ -43,16 +43,19 @@ abstract class AbstractMethod
      * Hydrate returned api data into our custom response models
      *
      * @param ResponseInterface       $object
-     * @param array                   $data
+     * @param array|bool              $data
      * @param ReflectionHydrator|null $hydrator
      *
      * @return ResponseInterface
      */
-    public function hydrate(ResponseInterface $object, array $data, $hydrator = null)
+    public function hydrate(ResponseInterface $object, $data, $hydrator = null)
     {
         if(!$hydrator instanceof ReflectionHydrator) {
             $hydrator = new ReflectionHydrator();
         }
+
+        if(!is_array($data))
+            return $data;
 
         return $hydrator->hydrate(
             $data,
