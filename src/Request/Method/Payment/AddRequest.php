@@ -27,15 +27,13 @@ class AddRequest extends AbstractMethod implements MethodInterface
 
     /**
      * Description of the request
-     * @var null
      */
-    private $memo = null;
+    private $memo;
 
     /**
      * Time in seconds
-     * @var null
      */
-    private $expiration = null;
+    private $expiration;
 
     /**
      * Force wallet creation, even if limit is exceeded
@@ -46,6 +44,7 @@ class AddRequest extends AbstractMethod implements MethodInterface
     /**
      * @return string
      */
+    #[\Override]
     public function getMethod()
     {
         return $this->method;
@@ -56,6 +55,7 @@ class AddRequest extends AbstractMethod implements MethodInterface
      *
      * @return AddRequest
      */
+    #[\Override]
     public function setMethod($method)
     {
         $this->method = $method;
@@ -83,17 +83,12 @@ class AddRequest extends AbstractMethod implements MethodInterface
         return $this;
     }
 
-    /**
-     * @return null
-     */
     public function getMemo()
     {
         return $this->memo;
     }
 
     /**
-     * @param null $memo
-     *
      * @return AddRequest
      */
     public function setMemo($memo)
@@ -103,17 +98,12 @@ class AddRequest extends AbstractMethod implements MethodInterface
         return $this;
     }
 
-    /**
-     * @return null
-     */
     public function getExpiration()
     {
         return $this->expiration;
     }
 
     /**
-     * @param null $expiration
-     *
      * @return AddRequest
      */
     public function setExpiration($expiration)
@@ -144,7 +134,6 @@ class AddRequest extends AbstractMethod implements MethodInterface
     }
 
     /**
-     * @param array $optional
      *
      * @return PaymentRequestResponse|null
      * @throws \Electrum\Request\Exception\BadRequestException

@@ -25,12 +25,10 @@ abstract class AbstractMethod
     /**
      * @var Client
      */
-    private $client = null;
+    private $client;
 
-    /**
-     * @param Client|null $client
-     */
-    public function __construct(Client $client = null)
+
+    public function __construct(?Client $client = null)
     {
         if($client instanceof Client) {
             $this->setClient($client);
@@ -42,10 +40,8 @@ abstract class AbstractMethod
     /**
      * Hydrate returned api data into our custom response models
      *
-     * @param ResponseInterface       $object
      * @param array|bool              $data
      * @param ReflectionHydrator|null $hydrator
-     *
      * @return ResponseInterface
      */
     public function hydrate(ResponseInterface $object, $data, $hydrator = null)
@@ -54,8 +50,9 @@ abstract class AbstractMethod
             $hydrator = new ReflectionHydrator();
         }
 
-        if(!is_array($data))
+        if (!is_array($data)) {
             return $data;
+        }
 
         return $hydrator->hydrate(
             $data,

@@ -14,7 +14,6 @@ class ElectrumResponseException extends Exception
     /**
      * Extract electrum error from response
      *
-     * @param array $response
      *
      * @return ElectrumResponseException
      */
@@ -27,12 +26,11 @@ class ElectrumResponseException extends Exception
             $text = '';
             if(is_string($response['error'])) {
                 $text = $response['error'];
-            } elseif (is_array($response['error'])
-                and isset($response['error']['message'])
-                and is_string($response['error']['message'])) {
+            } elseif (is_array($response['error']) && isset($response['error']['message']) && is_string($response['error']['message'])) {
                 $text = $response['error']['message'];
             }
-            $message = "Electrum API returned error: {$text}";
+
+            $message = 'Electrum API returned error: ' . $text;
         }
 
         if (isset($response['error']['code'])) {

@@ -30,7 +30,6 @@ class PayTo extends AbstractMethod implements MethodInterface
     private $destination = '';
 
     /**
-     * @param array $optional
      * @return mixed
      * @throws ElectrumResponseException
      * @throws \Electrum\Request\Exception\BadRequestException

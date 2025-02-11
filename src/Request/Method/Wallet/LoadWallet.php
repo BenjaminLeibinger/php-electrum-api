@@ -20,7 +20,6 @@ class LoadWallet extends AbstractMethod implements MethodInterface
     private $method = 'load_wallet';
 
     /**
-     * @param array $attributes
      * @return object
      * @throws \Electrum\Request\Exception\BadRequestException
      * @throws \Electrum\Response\Exception\ElectrumResponseException

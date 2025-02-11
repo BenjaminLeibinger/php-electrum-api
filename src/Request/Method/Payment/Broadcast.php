@@ -25,7 +25,6 @@ class Broadcast extends AbstractMethod implements MethodInterface
     private $transaction = '';
 
     /**
-     * @param array $optional
      * @return mixed
      * @throws \Electrum\Request\Exception\BadRequestException
      * @throws \Electrum\Response\Exception\ElectrumResponseException

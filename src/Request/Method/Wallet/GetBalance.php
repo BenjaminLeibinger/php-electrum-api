@@ -19,7 +19,6 @@ class GetBalance extends AbstractMethod implements MethodInterface
     private $method = 'getbalance';
 
     /**
-     * @param array $optional
      *
      * @return BalanceResponse
      * @throws \Electrum\Request\Exception\BadRequestException

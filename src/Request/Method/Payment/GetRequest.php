@@ -27,7 +27,6 @@ class GetRequest extends AbstractMethod implements MethodInterface
     private $method = 'getrequest';
 
     /**
-     * @param array $optional
      *
      * @return PaymentRequestResponse|null
      * @throws \Electrum\Request\Exception\BadRequestException
@@ -41,13 +40,12 @@ class GetRequest extends AbstractMethod implements MethodInterface
             // Yes, key instead of address. Because fuck consistency - Electrum Dev, 2016
             $data = $this->getClient()->execute($this->method, array_merge(['key' => $this->getAddress()], $optional));
 
-        } catch(ElectrumResponseException $exception) {
+        } catch(ElectrumResponseException $electrumResponseException) {
 
-            if($exception->getCode() == -32603) {
+            if($electrumResponseException->getCode() == -32603) {
                 return null;
-            } else {
-                throw $exception;
             }
+            throw $electrumResponseException;
 
         }
 

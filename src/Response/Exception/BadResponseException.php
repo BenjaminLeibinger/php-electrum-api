@@ -13,7 +13,6 @@ class BadResponseException extends Exception
     /**
      * Extract electrum error from response
      *
-     * @param array $response
      *
      * @return BadRequestException
      */

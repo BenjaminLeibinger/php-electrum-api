@@ -44,7 +44,6 @@ class IsAddressMine extends AbstractMethod implements MethodInterface
     }
 
     /**
-     * @param array $optional
      *
      * @return IsMineResponse
      * @throws \Electrum\Request\Exception\BadRequestException

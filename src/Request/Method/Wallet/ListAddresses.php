@@ -1,29 +1,31 @@
 <?php
 
+
 namespace Electrum\Request\Method\Wallet;
+
 
 use Electrum\Request\AbstractMethod;
 use Electrum\Request\MethodInterface;
 
 /**
- * Return newly created wallet
+ * Return all loaded wallets
  * @original_author Pascal Krason <p.krason@padr.io>
  */
-class CreateWallet extends AbstractMethod implements MethodInterface
+class ListAddresses extends AbstractMethod implements MethodInterface
 {
 
     /**
      * @var string
      */
-    private $method = 'create';
+    private $method = 'listaddresses';
 
     /**
      * @return object
      * @throws \Electrum\Request\Exception\BadRequestException
      * @throws \Electrum\Response\Exception\ElectrumResponseException
      */
-    public function execute(array $attributes = [])
+    public function execute(array $optional = [])
     {
-        return $this->getClient()->execute($this->method, $attributes);
+        return $this->getClient()->execute($this->method, $optional);
     }
 }

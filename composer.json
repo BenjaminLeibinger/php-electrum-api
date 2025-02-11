@@ -22,5 +22,9 @@
 		"psr-4": {
 			"Electrum\\": "src"
 		}
-	}
+	},
+    "require-dev": {
+        "rector/rector": "^2.0",
+        "phpstan/phpstan": "^2.1"
+    }
 }

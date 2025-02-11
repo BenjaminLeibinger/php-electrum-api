@@ -18,7 +18,6 @@ class ClearRequests extends AbstractMethod implements MethodInterface
     private $method = 'clearrequests';
 
     /**
-     * @param array $optional
      *
      * @return boolean  Always true because electrum does not tell us anything else.
      * @throws \Electrum\Request\Exception\BadRequestException

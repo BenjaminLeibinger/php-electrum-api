@@ -45,7 +45,6 @@ class GetAddressHistory extends AbstractMethod implements MethodInterface
     }
 
     /**
-     * @param array $optional
      *
      * @return HistoryResponse
      * @throws \Electrum\Request\Exception\BadRequestException

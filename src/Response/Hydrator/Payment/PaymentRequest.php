@@ -13,9 +13,9 @@ class PaymentRequest extends ReflectionHydrator
 
     public function __construct()
     {
-        parent::__construct();
+        // parent::__construct();
 
-        $namingStrategy = new MapNamingStrategy([
+        $namingStrategy = MapNamingStrategy::createFromHydrationMap([
             'id' => 'id',
             'status' => 'status',
             'memo' => 'memo',

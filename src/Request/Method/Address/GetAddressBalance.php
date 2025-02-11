@@ -45,7 +45,6 @@ class GetAddressBalance extends AbstractMethod implements MethodInterface
     }
 
     /**
-     * @param array $optional
      *
      * @return BalanceResponse
      * @throws \Electrum\Request\Exception\BadRequestException

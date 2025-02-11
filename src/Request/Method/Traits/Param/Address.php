@@ -14,7 +14,7 @@ trait Address
     /**
      * @var string
      */
-    private $address = null;
+    private $address;
 
     /**
      * @return string
@@ -37,8 +37,6 @@ trait Address
     }
 
     /**
-     * @param PaymentRequest $request
-     *
      * @return $this
      */
     public function setPaymentRequest(PaymentRequest $request)

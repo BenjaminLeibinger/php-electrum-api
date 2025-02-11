@@ -22,7 +22,6 @@ class RemoveRequest extends AbstractMethod implements MethodInterface
 
 
     /**
-     * @param array $optional
      *
      * @return boolean
      * @throws \Electrum\Request\Exception\BadRequestException

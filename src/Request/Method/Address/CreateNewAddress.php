@@ -20,7 +20,6 @@ class CreateNewAddress extends AbstractMethod implements MethodInterface
     private $method = 'createnewaddress';
 
     /**
-     * @param array $attributes
      * @return object
      * @throws \Electrum\Request\Exception\BadRequestException
      * @throws \Electrum\Response\Exception\ElectrumResponseException

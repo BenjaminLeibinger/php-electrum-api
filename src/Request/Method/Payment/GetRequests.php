@@ -20,7 +20,6 @@ class GetRequests extends AbstractMethod implements MethodInterface
     private $method = 'listrequests';
 
     /**
-     * @param array $optional
      *
      * @return PaymentRequestResponse[]
      * @throws \Electrum\Request\Exception\BadRequestException

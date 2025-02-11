@@ -34,7 +34,7 @@ class PaymentRequest implements ResponseInterface
     /**
      * @var Amount|null
      */
-    private $amount = null;
+    private $amount;
 
     /**
      * @var string
@@ -64,33 +64,28 @@ class PaymentRequest implements ResponseInterface
     /**
      * @var int
      */
-    private $confirmations = null;
+    private $confirmations;
 
     /**
      * Factory method
      *
-     * @param array $data
      *
      * @return PaymentRequest
      */
     public static function createFromArray(array $data)
     {
-        /** @var PaymentRequest $paymentRequest */
-        $paymentRequestResponse = null;
-
         $amountHydrator = new \Electrum\Response\Hydrator\Payment\Amount();
         $amount = $amountHydrator->hydrate($data, new Amount());
 
         $paymentRequestHydrator = new PaymentRequestHydrator();
-        $paymentRequestResponse = $paymentRequestHydrator->hydrate(
+
+        return $paymentRequestHydrator->hydrate(
             array_merge(
                 $data, [
                 'amount' => $amount
             ]),
             new self
         );
-
-        return $paymentRequestResponse;
     }
 
     /**

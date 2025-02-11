@@ -20,7 +20,6 @@ class GetHistory extends AbstractMethod implements MethodInterface
     private $method = 'history';
 
     /**
-     * @param array $optional
      *
      * @return HistoryResponse
      * @throws \Electrum\Request\Exception\BadRequestException
@@ -30,17 +29,19 @@ class GetHistory extends AbstractMethod implements MethodInterface
     {
         $data = $this->getClient()->execute($this->method, $optional);
         if (!is_array($data)) {
-            $data = json_decode($data, true);
+            $data = json_decode((string) $data, true);
             if (isset($data['transactions'])) {
                 $data = $data['transactions'];
             } else {
                 throw new BadResponseException('Cannot get history');
             }
         }
+
         $transactions = [];
         foreach ($data as $transaction) {
             $transactions[] = $this->hydrate(new Transaction(), $transaction);
         }
+
         return $transactions;
     }
 }

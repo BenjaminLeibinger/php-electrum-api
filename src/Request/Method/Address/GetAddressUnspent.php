@@ -45,7 +45,6 @@ class GetAddressUnspent extends AbstractMethod implements MethodInterface
     }
 
     /**
-     * @param array $optional
      *
      * @return UnspentResponse
      * @throws \Electrum\Request\Exception\BadRequestException
